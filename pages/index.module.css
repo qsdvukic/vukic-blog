@@ -1,0 +1,86 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: url("../assets/QSDlogo.png"), url("../assets/Group\ 1.png"),
+    url("../assets/Group\ 1.png"), url("../assets/Group\ 1.png");
+  background-size: 100px, 600px, 300px, 150px;
+  background-repeat: no-repeat;
+  background-position: top 20px right 20px, bottom 60% left 5%,
+    bottom 10% left 90%, top 10% left 70%;
+}
+
+.title {
+  margin-bottom: 200px;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 2;
+  color: #a7cb08;
+  text-shadow: 6px 5px 14px rgba(0, 0, 0, 0.24);
+}
+
+.title span {
+  color: rgba(50, 50, 93, 0.762);
+  font-size: 25px;
+  text-shadow: 6px 5px 14px rgba(0, 0, 0, 0);
+  letter-spacing: 2px;
+}
+
+.title span::before {
+  content: "\A";
+  white-space: pre;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  position: absolute;
+  bottom: 70px;
+  z-index: 2;
+}
+
+.card {
+  width: 250px;
+  height: 140px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: middle;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: rgba(50, 50, 93, 0.762);
+  padding: 0px 10px;
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+.card .cardTitle {
+  font-size: 25px;
+  margin: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card .cardTitle svg {
+  margin-left: 20px;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.card:hover .cardTitle {
+  color: #a7cb08;
+}

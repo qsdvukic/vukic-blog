@@ -1,0 +1,26 @@
+.footer {
+  /* background-color: #a7cb08;*/
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.footer p {
+  padding: 0px 20px;
+  color: rgba(50, 50, 93, 0.762);
+}
+
+.time {
+  /* position: absolute; */
+  left: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  border: 3px solid #a7cb08;
+  border-radius: 10px;
+  margin-left: 20px;
+}
