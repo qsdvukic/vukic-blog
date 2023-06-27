@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import axios from "../../utils/axios";
 import { PageTitle } from "../../components/pageTitle/PageTitle";
 import { Loader } from "../../components/loaders/Loader";
 import styles from "./Isr.module.css";
 import { Footer } from "../../components/footer/Footer";
 
-const StaticSiteGeneration = (props: any) => {
+type Props = {
+  time: string;
+};
+
+const StaticSiteGeneration: FC<Props> = ({ time }) => {
   const [loading, setLoading] = useState(false);
   return (
     <div>
@@ -17,7 +21,7 @@ const StaticSiteGeneration = (props: any) => {
           <Loader />
         ) : (
           <p className={styles.result}>
-            {`${props.time.slice(0, 10)} ${props.time.slice(11, 19)}`}
+            ${time.slice(0, 10)} ${time.slice(11, 19)}
           </p>
         )}
         <Footer />
@@ -33,6 +37,6 @@ export async function getStaticProps() {
   const datatime = res.data.datetime;
   return {
     props: { time: datatime },
-    revalidate: 5,
+    revalidate: 15,
   };
 }

@@ -12,8 +12,8 @@ const Footer = dynamic<any>(
 );
 
 const ClientSideRendering = () => {
-  const [time, setTime] = useState();
-  const [loading, setLoading] = useState(false);
+  const [time, setTime] = useState<string>();
+  const [loading, setLoading] = useState<boolean>(false);
   const getTime = async () => {
     setLoading(true);
     try {
@@ -22,7 +22,7 @@ const ClientSideRendering = () => {
       let time = data.datetime.slice(11, 19);
       setTime(date.concat(" ", time));
     } catch (error: any) {
-      console.log("Error na csr");
+      console.log("CSR error");
     }
     setLoading(false);
   };
@@ -32,8 +32,8 @@ const ClientSideRendering = () => {
   return (
     <>
       <PageTitle
-        desc="Client Side Rendering (CSR) refers to rendering web pages dynamically on every render with loader spinner."
-        title="Client Side Rendering"
+        desc="Client-Side Rendering (CSR) refers to rendering web pages dynamically on every render with loader spinner."
+        title="Client-Side Rendering"
       >
         {loading ? <Loader /> : <p className={styles.result}>{time && time}</p>}
         <Footer />
