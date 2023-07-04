@@ -1,7 +1,6 @@
 import React, { FC, useState } from "react";
 import axios from "../../utils/axios";
 import { PageTitle } from "../../components/pageTitle/PageTitle";
-import { Loader } from "../../components/loaders/Loader";
 import styles from "./Isr.module.css";
 import { Footer } from "../../components/footer/Footer";
 
@@ -10,20 +9,15 @@ type Props = {
 };
 
 const StaticSiteGeneration: FC<Props> = ({ time }) => {
-  const [loading, setLoading] = useState(false);
   return (
     <div>
       <PageTitle
         desc="Incremental Static Rendering (ISR) allows you to generate and serve pre-rendered static pages at build time, but with the ability to update them dynamically as needed."
         title="Incremental Static Rendering"
       >
-        {loading ? (
-          <Loader />
-        ) : (
-          <p className={styles.result}>
-            ${time.slice(0, 10)} ${time.slice(11, 19)}
-          </p>
-        )}
+        <p className={styles.result}>
+          {time.slice(0, 10)} {time.slice(11, 19)}
+        </p>
         <Footer />
       </PageTitle>
     </div>

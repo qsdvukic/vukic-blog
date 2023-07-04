@@ -31,10 +31,10 @@ const ServerSideRendering: FC<Props> = ({ time }) => {
 
 export default ServerSideRendering;
 
-export async function getServerSideProps() {
+export const getServerSideProps = async () => {
   const res = await axios.get("Europe/Sarajevo");
-  const datatime = res.data.datetime;
+  const datetime = res.data.datetime;
   return {
-    props: { time: datatime },
+    props: { time: datetime },
   };
-}
+};

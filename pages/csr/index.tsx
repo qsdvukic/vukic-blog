@@ -18,17 +18,20 @@ const ClientSideRendering = () => {
     setLoading(true);
     try {
       const { data } = await axios.get("Europe/Sarajevo");
-      let date = data.datetime.slice(0, 10);
-      let time = data.datetime.slice(11, 19);
+      const date = data.datetime.slice(0, 10);
+      const time = data.datetime.slice(11, 19);
       setTime(date.concat(" ", time));
     } catch (error: any) {
       console.log("CSR error");
+    } finally {
+      setTimeout(() => setLoading(false), 2000);
     }
-    setLoading(false);
   };
+
   useEffect(() => {
     getTime();
   }, []);
+
   return (
     <>
       <PageTitle

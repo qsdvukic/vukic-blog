@@ -3,7 +3,7 @@ import { Watch } from "react-loader-spinner";
 
 export const Loader = () => {
   return (
-    <div>
+    <div style={{ marginTop: "10px" }}>
       <Watch
         height="80"
         width="80"
