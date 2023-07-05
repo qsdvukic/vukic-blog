@@ -10,7 +10,6 @@ const Home = () => {
   return (
     <>
       <div className={styles.main}>
-        {/* <Image src={qsd} alt="qsd" className={styles.test} /> */}
         <p className={styles.title}>
           Next.js Rendering Deep Dive:
           <span>Unraveling the Differences between SSR, SSG, CSR, and ISR</span>
@@ -67,12 +66,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{
-  /* <div className={styles.main}>
-        <Navbar navbarLinks={navbar} bgColor={"rgba(0,0,0,43)"} />
-        <div className={styles.heading}>
-          <div className={styles.title}>Next.js</div>
-        </div>
-      </div> */
-}
